@@ -2,9 +2,9 @@ import random
 import player
 
 def draw():
-    dr = random.randint(1, 2)
-    if dr == 1:
-        return 1
+    dr = random.randint(0, 1)
+    if dr == 0:
+        return 0
     else:
-        return 2
+        return 1
 
