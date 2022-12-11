@@ -36,3 +36,4 @@ candies = 117
 if pl2_or_bot == 2:
     functions.start_game(players[0].name, players[1].name, start, candies) 
 else:
+    
