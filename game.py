@@ -28,3 +28,4 @@ print(f'Начинает игрок №{start + 1} - {players[start].name}')
 
 candies = 117
 
+functions.start_game(players[0].name, players[1].name, start, candies)
