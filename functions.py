@@ -1,8 +1,10 @@
 import random
+import player
 
-def draw(p1, p2):
-    dr = random.randint(0, 1)
-    if dr == 0:
-        return p1
+def draw():
+    dr = random.randint(1, 2)
+    if dr == 1:
+        return 1
     else:
-        return p2
+        return 2
+
