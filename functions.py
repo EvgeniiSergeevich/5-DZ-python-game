@@ -13,24 +13,27 @@ def start_game(name1, name2, start, candies):
     else:
         print(f'{name2}, начинай!')
     while candies > 0:
-        print(f'Начало {i}')
         if i % 2 != 0:
             take = int(input(f'{name1}, сколько конфет заберёшь? Введи число от 1 до 28:   '))
+            if candies - take < 0:
+                print(f"Столько конфет нет! Число должно быть меньше {candies + 1}!!!")
+                continue
             if take > 0 and take < 29:
                 candies -= take
                 print(f'{name1} оставил {candies} котфет')
                 i += 1
-                print(f'После хода {i}')
             else:
                 print('Не верно введено число! Повтори!')
                 continue
         else:
             take = int(input(f'{name2}, сколько конфет заберёшь? Введи число от 1 до 28:   '))
+            if candies - take < 0:
+                print(f"Столько конфет нет! Число должно быть меньше {candies + 1}!!!")
+                continue
             if take > 0 and take < 29:
                 candies -= take
                 print(f'{name2} оставил {candies} котфет')
                 i += 1
-                print(f'После хода {i}')
             else:
                 print('Не верно введено число! Повтори!')
                 continue
