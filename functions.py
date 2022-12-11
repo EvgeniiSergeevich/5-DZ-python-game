@@ -33,6 +33,10 @@ def start_game(name1, name2, start, candies):
             else:
                 print('Не верно введено число! Повтори!')
                 continue
+    if i % 2 == 0:
+        print(f'{name2} Победил!!! УРА!')
+    else:
+        print(f'{name1} Победил!!! УРА!')
 
 
 # бери конфеты!! Конфет осталось {candies}

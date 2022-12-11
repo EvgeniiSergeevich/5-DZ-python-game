@@ -27,3 +27,4 @@ print(spl)
 print(f'Начинает игрок №{start + 1} - {players[start].name}')
 
 candies = 117
+
