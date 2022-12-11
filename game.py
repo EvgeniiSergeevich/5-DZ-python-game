@@ -1,7 +1,5 @@
 import player
 import functions
-import bot
-
 
 spl = '__________________________________________\n'                    # Просто разделитель
 
@@ -18,7 +16,7 @@ if pl2_or_bot == 2:                                                     # Соз
 elif pl2_or_bot == 1:
     name_p1 = input('Введите Ваше имя: ')
     player1 = player.Player(name_p1)
-    bot1 = player.Player('Джарвис')
+    bot1 = player.Player('ИИ Джарвис')
     players = [player1, bot1]
 else:
     print('Введите 1 или 2!!')
@@ -36,4 +34,4 @@ candies = 117
 if pl2_or_bot == 2:
     functions.start_game(players[0].name, players[1].name, start, candies) 
 else:
-    
+    functions.start_game_bot(players[0].name, players[1].name, start, candies)
