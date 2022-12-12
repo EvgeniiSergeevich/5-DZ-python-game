@@ -20,7 +20,7 @@ def start_game(name1, name2, start, candies):                               # Л
     while candies > 0:                                                      # Логика игры. Отнимаю от общего количества конфеты,
         if i % 2 != 0:                                                      # обрабатываю различные исключения, увеличиваю счётчик
             take = input(f'{name1}, сколько конфет заберёшь? Введи число от 1 до 28:   ')
-            if take == "q":
+            if take.lower() == "q":
                 break
             try:
                 take = int(take)
@@ -39,7 +39,7 @@ def start_game(name1, name2, start, candies):                               # Л
                 continue
         else:
             take = input(f'{name2}, сколько конфет заберёшь? Введи число от 1 до 28:   ')
-            if take == "q":
+            if take.lower() == "q":
                 break
             try:
                 take = int(take)
@@ -80,7 +80,7 @@ def start_game_bot(name1, name2, start, candies):                           # Л
     while candies > 0:                                                      
         if i % 2 != 0:                                                     
             take = input(f'{name1}, сколько конфет заберёшь? Введи число от 1 до 28:   ')       # Человеческая логика
-            if take == "q":
+            if take.lower() == "q":
                 break
             try:
                 take = int(take)
