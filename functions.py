@@ -4,6 +4,8 @@ import player
 def draw():                                                                 # Жеребъёвка
     return random.randint(0, 1)
     
+spl = '__________________________________________\n'                    # Просто разделитель
+
 
 def start_game(name1, name2, start, candies):                               # Логика игры для 2х игроков
     i = start + 1                                                           # Счётчик для выявления победителя, привязан к жребию                     
@@ -17,7 +19,14 @@ def start_game(name1, name2, start, candies):                               # Л
 
     while candies > 0:                                                      # Логика игры. Отнимаю от общего количества конфеты,
         if i % 2 != 0:                                                      # обрабатываю различные исключения, увеличиваю счётчик
-            take = int(input(f'{name1}, сколько конфет заберёшь? Введи число от 1 до 28:   '))
+            take = input(f'{name1}, сколько конфет заберёшь? Введи число от 1 до 28:   ')
+            if take == "q":
+                break
+            try:
+                take = int(take)
+            except:
+                print(f'Вы ввели не число! {take} имеет тип {type(take)} i = {i}')
+                continue
             if candies - take < 0:
                 print(f"Столько конфет нет! Число должно быть меньше {candies + 1}!!!")
                 continue
@@ -29,7 +38,15 @@ def start_game(name1, name2, start, candies):                               # Л
                 print('Не верно введено число! Повтори!')
                 continue
         else:
-            take = int(input(f'{name2}, сколько конфет заберёшь? Введи число от 1 до 28:   '))
+            take = input(f'{name2}, сколько конфет заберёшь? Введи число от 1 до 28:   ')
+            if take == "q":
+                break
+            try:
+                take = int(take)
+            except:
+                print(f'Вы ввели не число! {take} имеет тип {type(take)} i = {i}')
+                continue
+
             if candies - take < 0:
                 print(f"Столько конфет нет! Число должно быть меньше {candies + 1}!!!")
                 continue
@@ -40,7 +57,12 @@ def start_game(name1, name2, start, candies):                               # Л
             else:
                 print('Не верно введено число! Повтори!')
                 continue
-    if i % 2 == 0:                                          # Такое условие, потому что после последнего хода счётчик прибавляется
+    if candies > 0:
+        print(spl)
+        print('Выход')
+        print(spl)
+        exit    
+    elif i % 2 == 0:                                          # Такое условие, потому что после последнего хода счётчик прибавляется
         print(f'{name1} Победил!!! УРА!')                   # Сначала была ошибка, но я потестировал и разобрался
     else:
         print(f'{name2} Победил!!! УРА!')
@@ -57,7 +79,14 @@ def start_game_bot(name1, name2, start, candies):                           # Л
 
     while candies > 0:                                                      
         if i % 2 != 0:                                                     
-            take = int(input(f'{name1}, сколько конфет заберёшь? Введи число от 1 до 28:   '))  # Человеческая логика
+            take = input(f'{name1}, сколько конфет заберёшь? Введи число от 1 до 28:   ')       # Человеческая логика
+            if take == "q":
+                break
+            try:
+                take = int(take)
+            except:
+                print(f'Вы ввели не число! {take} имеет тип {type(take)} i = {i}')
+                continue  
             if candies - take < 0:
                 print(f"Столько конфет нет! Число должно быть меньше {candies + 1}!!!")
                 continue
@@ -103,8 +132,12 @@ def start_game_bot(name1, name2, start, candies):                           # Л
                 candies -= take
                 print(f'{name2} забрал {take} конфет и оставил {candies}!')
                 i += 1
-
-    if i % 2 == 0:                                          
+    if candies > 0:
+        print(spl)
+        print('Выход')
+        print(spl)
+        exit    
+    elif i % 2 == 0:                                          
         print(f'{name1} Победил!!! УРА!')                  
     else:
         print(f'{name2} Победил!!! УРА!')
