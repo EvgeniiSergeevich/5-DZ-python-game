@@ -27,16 +27,17 @@ def start_game(name1, name2, start, candies):                               # Л
             except:
                 print(f'Вы ввели не число! {take} имеет тип {type(take)} i = {i}')
                 continue
-            if candies - take < 0:
+            if take < 0 or take > 28:
+                print('Не верно введено число! Повтори!')
+                continue
+            elif candies - take < 0:
                 print(f"Столько конфет нет! Число должно быть меньше {candies + 1}!!!")
                 continue
-            if take > 0 and take < 29:
+            elif take > 0 and take < 29:
                 candies -= take
                 print(f'{name1} оставил {candies} котфет')
                 i += 1
-            else:
-                print('Не верно введено число! Повтори!')
-                continue
+            
         else:
             take = input(f'{name2}, сколько конфет заберёшь? Введи число от 1 до 28:   ')
             if take.lower() == "q":
@@ -46,17 +47,17 @@ def start_game(name1, name2, start, candies):                               # Л
             except:
                 print(f'Вы ввели не число! {take} имеет тип {type(take)} i = {i}')
                 continue
-
-            if candies - take < 0:
+            if take < 0 or take > 28:
+                print('Не верно введено число! Повтори!')
+                continue
+            elif candies - take < 0:
                 print(f"Столько конфет нет! Число должно быть меньше {candies + 1}!!!")
                 continue
-            if take > 0 and take < 29:
+            elif take > 0 and take < 29:
                 candies -= take
                 print(f'{name2} оставил {candies} котфет')
                 i += 1
-            else:
-                print('Не верно введено число! Повтори!')
-                continue
+            
     if candies > 0:
         print(spl)
         print('Выход')
@@ -87,16 +88,18 @@ def start_game_bot(name1, name2, start, candies):                           # Л
             except:
                 print(f'Вы ввели не число! {take} имеет тип {type(take)} i = {i}')
                 continue  
-            if candies - take < 0:
+            if take < 0 or take > 28:
+                print('Не верно введено число! Повтори!')
+                continue
+            elif candies - take < 0:
                 print(f"Столько конфет нет! Число должно быть меньше {candies + 1}!!!")
                 continue
-            if take > 0 and take < 29:
+            elif take > 0 and take < 29:
                 candies -= take
                 print(f'{name1} оставил {candies} котфет')
                 i += 1
-            else:
-                print('Не верно введено число! Повтори!')
-                continue
+            
+                
         else:                                                                                   # Логика бота
             if candies < 29:
                 # print('< 29')
