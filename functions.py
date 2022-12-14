@@ -131,7 +131,7 @@ def start_game_bot(name1, name2, start, candies):                           # Л
                 
             else:
                 # print('Остальные случаи')
-                take = random.randint(1, 29)
+                take = random.randint(1, 28)
                 candies -= take
                 print(f'{name2} забрал {take} конфет и оставил {candies}!')
                 i += 1
